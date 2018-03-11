@@ -9,17 +9,17 @@ class ScannyMcScanFace:
 
     reddit = praw.Reddit("bot1")
     
-    #Chosen subreddit
-    subreddit_name = "aww"
+    #Chosen subreddit. Please be mindful of any blacklisted subreddits.
+    subreddit_name = "pcmasterrace"
     
-    #Allowed File Extensions
+    #Allowed list of File Extensions
     file_ext = [".jpg", ".png", ".gif"]
     
-    #Allowed URL Types
+    #Allowed list of URL Types
     file_type = ["imgur", "redd.it"]
     
-    #Chosen search keywords
-    file_seek = [""]
+    #Chosen list of search keywords
+    file_seek = ["PC"]
     
     #Chosen output directory.
     output_directory = "./Pics/"
@@ -30,10 +30,12 @@ class ScannyMcScanFace:
 
     def scan(self):
         sub = self.reddit.subreddit(self.subreddit_name)
-
+        
+        # Creates output directory if it doesn't exist.
         if not os.path.exists(self.output_directory):
             os.makedirs(self.output_directory)
-
+        
+        # Scans the last 1024 posts to get previously submitted data.
         print("Current user: %s" % self.reddit.user.me())
         self.submissions = list(sub.new(limit=1024))
         for submission in self.submissions:
@@ -51,7 +53,8 @@ class ScannyMcScanFace:
 
         print("Historical Pictures Saved!")
         print("Real time Submissions Capture Active...")
-
+        
+        # Enables realtime submission data capture.
         for submission in sub.stream.submissions():
             if any(x in str.upper(submission.title) for x in self.file_seek):
                 submission_url = submission.url
