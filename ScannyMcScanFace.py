@@ -18,7 +18,7 @@ class ScannyMcScanFace:
     #Allowed list of URL Types
     file_type = ["imgur", "redd.it"]
     
-    #Chosen list of search keywords
+    #Chosen list of search keywords. Please put all keywords in CAPITAL letters.
     file_seek = ["PC"]
     
     #Chosen output directory.
