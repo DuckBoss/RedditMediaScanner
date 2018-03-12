@@ -22,7 +22,7 @@ class ScannyMcScanFace:
     file_seek = ["PC"]
     
     #Chosen output directory.
-    output_directory = "./Pics/"
+    output_directory = "./DownloadedMedia/"
 
     def __init__(self):
         print("ScannyMcScanFace Initialized!")
