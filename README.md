@@ -1,4 +1,4 @@
-# ScannyMyScanFace-Python
+# ScannyMyScanFace-Python3
 This is a script that accesses a subreddit and downloads images based on keywords from the submission title.
 
 ## Dependencies
