@@ -66,15 +66,12 @@ class ScannyMcScanFace:
                         if os.path.isfile(file_dir):
                             print("Already Exists - %s" %file_dir)
                             print("Skipping...")
-                            
-                            print("Waiting for new file...")
-                            sleep(2)
-                            continue
                         else:
                             print("Downloaded to - %s" %file_dir)
                             wget.download(submission_url, out=self.output_directory)
-                            print("Waiting for new file...")
-                            sleep(2)
+                        print("Waiting for new file...")
+                        print("_______________________")
+                        sleep(2)
                         
             
 
