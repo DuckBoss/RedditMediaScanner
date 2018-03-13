@@ -41,6 +41,10 @@ class ScannyMcScanFace:
         submissionUrl = gifURL
         return submissionUrl
 
+    def fileNameFormat(self, fileName):
+        fileName = re.sub('[^A-Za-z0-9]+', '', fileName)
+        return fileName
+
     def historicalScan(self):
         print("Historical Submissions Capture Active...")
         for submission in self.submissions:
@@ -56,12 +60,13 @@ class ScannyMcScanFace:
 
                     if any(z in submission_url for z in self.file_ext):
                         print(submission_url)
-                        file_name = submission_url.rsplit('/', 1)[1]
-                        file_dir = ("%s%s" % (self.output_directory, file_name))
+                        file_name = self.fileNameFormat(submission.title)
+                        file_dir = ("%s%s.%s" % (self.output_directory, file_name, submission_url.rsplit('.',1)[1]))
+                        print(file_dir)
                         if os.path.isfile(file_dir):
                             continue
                         else:
-                            wget.download(submission_url, out=self.output_directory)
+                            wget.download(submission_url, out=file_dir)
                             print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1024))
         print("Historical Pictures Saved!")
 
@@ -78,14 +83,14 @@ class ScannyMcScanFace:
 
                     if any(z in submission_url for z in self.file_ext):
                         print(submission_url)
-                        file_name = submission_url.rsplit('/', 1)[1]
-                        file_dir = ("%s%s" % (self.output_directory, file_name))
+                        file_name = self.fileNameFormat(submission.title)
+                        file_dir = ("%s%s.%s" % (self.output_directory, file_name, submission_url.rsplit('.',1)[1]))
                         if os.path.isfile(file_dir):
                             print("Already Exists - %s" %file_dir)
                             print("Skipping...")
                         else:
                             print("Downloaded to - %s" %file_dir)
-                            wget.download(submission_url, out=self.output_directory)
+                            wget.download(submission_url, out=self.file_dir)
                             print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1024))
                         print("Waiting for new file...")
                         print("_______________________")
