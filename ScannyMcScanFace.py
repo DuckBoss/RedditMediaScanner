@@ -62,7 +62,7 @@ class ScannyMcScanFace:
                             continue
                         else:
                             wget.download(submission_url, out=self.output_directory)
-                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1000))
+                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1024))
         print("Historical Pictures Saved!")
 
     def realtimeScan(self):
@@ -86,7 +86,7 @@ class ScannyMcScanFace:
                         else:
                             print("Downloaded to - %s" %file_dir)
                             wget.download(submission_url, out=self.output_directory)
-                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1000))
+                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1024))
                         print("Waiting for new file...")
                         print("_______________________")
                         sleep(2)
