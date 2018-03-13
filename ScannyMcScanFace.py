@@ -25,7 +25,9 @@ class ScannyMcScanFace:
     def __init__(self):
         print("ScannyMcScanFace Initialized!")
         print(dt.datetime.now())
+        print("Current user: %s" % self.reddit.user.me())
         self.sub = self.reddit.subreddit(self.subreddit_name)
+        self.submissions = list(self.sub.new(limit=1024))
         if not os.path.exists(self.output_directory):
             os.makedirs(self.output_directory)
 
@@ -40,13 +42,16 @@ class ScannyMcScanFace:
         return submissionUrl
 
     def historicalScan(self):
-        print("Current user: %s" % self.reddit.user.me())
-        self.submissions = list(self.sub.new(limit=1024))
+        print("Historical Submissions Capture Active...")
         for submission in self.submissions:
             if any(x in str.upper(submission.title) for x in self.file_seek):
+                if submission.over_18:
+                    continue
                 submission_url = submission.url
                 if any(y in submission_url for y in self.file_type):
                     if "gfycat" in submission_url:
+                        if "albums" in submission_url:
+                            continue
                         submission_url = self.gfyFormat(submission_url)
 
                     if any(z in submission_url for z in self.file_ext):
@@ -57,12 +62,15 @@ class ScannyMcScanFace:
                             continue
                         else:
                             wget.download(submission_url, out=self.output_directory)
+                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1000))
         print("Historical Pictures Saved!")
 
     def realtimeScan(self):
         print("Real time Submissions Capture Active...")
         for submission in self.sub.stream.submissions():
             if any(x in str.upper(submission.title) for x in self.file_seek):
+                if submission.over_18:
+                    continue
                 submission_url = submission.url
                 if any(y in submission_url for y in self.file_type):
                     if "gfycat" in submission_url:
@@ -73,11 +81,12 @@ class ScannyMcScanFace:
                         file_name = submission_url.rsplit('/', 1)[1]
                         file_dir = ("%s%s" % (self.output_directory, file_name))
                         if os.path.isfile(file_dir):
-                            print("Already Exists - %s" %file_dir)
+                            print("Already Exists - %s KB" %file_dir)
                             print("Skipping...")
                         else:
                             print("Downloaded to - %s" %file_dir)
                             wget.download(submission_url, out=self.output_directory)
+                            print("\nFile Size: %s" % (os.path.getsize(file_dir)/1000))
                         print("Waiting for new file...")
                         print("_______________________")
                         sleep(2)
