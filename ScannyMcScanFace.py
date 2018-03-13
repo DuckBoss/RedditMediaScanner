@@ -3,6 +3,7 @@ import wget
 import urllib.request
 import json
 import os
+import re
 import datetime as dt
 from time import sleep
 import sys
@@ -64,6 +65,8 @@ class ScannyMcScanFace:
                         file_dir = ("%s%s.%s" % (self.output_directory, file_name, submission_url.rsplit('.',1)[1]))
                         print(file_dir)
                         if os.path.isfile(file_dir):
+                            print("Already Exists - %s" %file_dir)
+                            print("Skipping...")
                             continue
                         else:
                             wget.download(submission_url, out=file_dir)
@@ -88,6 +91,7 @@ class ScannyMcScanFace:
                         if os.path.isfile(file_dir):
                             print("Already Exists - %s" %file_dir)
                             print("Skipping...")
+                            continue
                         else:
                             print("Downloaded to - %s" %file_dir)
                             wget.download(submission_url, out=self.file_dir)
