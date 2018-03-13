@@ -81,12 +81,12 @@ class ScannyMcScanFace:
                         file_name = submission_url.rsplit('/', 1)[1]
                         file_dir = ("%s%s" % (self.output_directory, file_name))
                         if os.path.isfile(file_dir):
-                            print("Already Exists - %s KB" %file_dir)
+                            print("Already Exists - %s" %file_dir)
                             print("Skipping...")
                         else:
                             print("Downloaded to - %s" %file_dir)
                             wget.download(submission_url, out=self.output_directory)
-                            print("\nFile Size: %s" % (os.path.getsize(file_dir)/1000))
+                            print("\nFile Size: %s KB" % (os.path.getsize(file_dir)/1000))
                         print("Waiting for new file...")
                         print("_______________________")
                         sleep(2)
