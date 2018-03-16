@@ -1,10 +1,13 @@
 # ScannyMcScanFace-Python3
 This is a script that accesses a subreddit and downloads images based on keywords from the submission title.
 
+[![GitHub release](https://img.shields.io/badge/Build-1.0-brightgreen.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/releases/latest)
+[![Packagist](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/blob/master/LICENSE)
+
+
 ## Dependencies
 - praw (can be installed with pip)
 - wget (can be installed with pip)
-
 
 ## Usage
 1) Setup a praw.ini file with your reddit username, password, user_agent, client_id, and client_secret.
