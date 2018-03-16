@@ -112,7 +112,7 @@ class ScannyMcScanFace:
 
 def main():
     if len(sys.argv) < 2:
-        print("ERROR: \nThis program requires a subreddit an keywords to be specified.")
+        print("ERROR: \nThis program requires atleast a subreddit to be specified.")
         print("You can leave the keywords argument blank to capture all content.")
         print("Format: python ScannyMcScanFace.py <subreddit_name> <keyword_1> <keyword_2> ...")
         sys.exit(1)
