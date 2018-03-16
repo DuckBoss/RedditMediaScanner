@@ -18,3 +18,14 @@ python ScannyMcScanFace.py <subreddit_name> <keyword_1> <keyword_2> ...
 
 ## praw.ini file
 You can use the template provided in this repository and fill in the required information as detailed in the usage section of the readme.
+
+## All imports used
+- praw
+- wget
+- urllib.request
+- json
+- os
+- re
+- datetime
+- time
+- sys
