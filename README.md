@@ -8,6 +8,7 @@ This is a script that accesses a subreddit and downloads images based on keyword
 
 ## Usage
 1) Setup a praw.ini file with your reddit username, password, user_agent, client_id, and client_secret.
+> You can register the app with your account for authentication here: https://www.reddit.com/prefs/apps/
 2) Keep the praw.ini file in the same directory as the python script.
 3) Run the script with the following format that uses system arguments:
 ```
