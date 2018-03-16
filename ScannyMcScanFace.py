@@ -11,26 +11,36 @@ import sys
 class ScannyMcScanFace:
 
     reddit = praw.Reddit("bot1")
-    
-    #Chosen subreddit. Please be mindful of any blacklisted subreddits.
-    subreddit_name = "pcmasterrace"
-    #Allowed list of File Extensions
+    subreddit_name = ""
+
     file_ext = [".jpg", ".png", ".gif"]
-    #Allowed list of URL Types
     file_type = ["gfycat", "imgur", "redd.it"]
-    #Chosen list of search keywords. Please put all keywords in CAPITAL letters.
-    file_seek = ["PC"]
-    #The output directory is named after the chosen subreddit.
-    output_directory = "./%s/" % subreddit_name
+    file_seek = []
+
+    output_directory = "./DefaultDirectory/"
+    sub = ""
 
     def __init__(self):
         print("ScannyMcScanFace Initialized!")
         print(dt.datetime.now())
         print("Current user: %s" % self.reddit.user.me())
+        self.subreddit_name = sys.argv[1]
+        self.output_directory = "./%s/" % self.subreddit_name
+        print("Subreddit - %s" % self.subreddit_name)
+        self.setupKeywords()
         self.sub = self.reddit.subreddit(self.subreddit_name)
         self.submissions = list(self.sub.new(limit=1024))
         if not os.path.exists(self.output_directory):
             os.makedirs(self.output_directory)
+
+    def setupKeywords(self):
+        if len(sys.argv) == 2:
+            self.file_seek = [""]
+            print("No Specific Keywords!")
+        elif len(sys.argv) > 2:
+            for x in range(2, len(sys.argv)):
+                self.file_seek.append(sys.argv[x].upper())
+                print("Keyword Added - %s" % self.file_seek[x-2])
 
     def gfyFormat(self, submissionUrl):
         subSplit = submissionUrl.rsplit('/', 1)[1].rsplit('-', 1)[0].rsplit('.gif', 1)[0]
@@ -101,6 +111,12 @@ class ScannyMcScanFace:
                         sleep(2)
 
 def main():
+    if len(sys.argv) < 2:
+        print("ERROR: \nThis program requires a subreddit an keywords to be specified.")
+        print("You can leave the keywords argument blank to capture all content.")
+        print("Format: python ScannyMcScanFace.py <subreddit_name> <keyword_1> <keyword_2> ...")
+        sys.exit(1)
+
     program = ScannyMcScanFace()
     startTime = dt.datetime.now()
     program.historicalScan()
