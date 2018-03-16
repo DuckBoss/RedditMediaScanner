@@ -36,7 +36,7 @@ class ScannyMcScanFace:
     def setupKeywords(self):
         if len(sys.argv) == 2:
             self.file_seek = [""]
-            print("No Specific Keywords!")
+            print("No Specific Keywords Given... Capturing All")
         elif len(sys.argv) > 2:
             for x in range(2, len(sys.argv)):
                 self.file_seek.append(sys.argv[x].upper())
