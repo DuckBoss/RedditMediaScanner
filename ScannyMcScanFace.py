@@ -14,7 +14,7 @@ class ScannyMcScanFace:
     subreddit_name = ""
 
     file_ext = [".jpg", ".png", ".gif"]
-    file_type = ["gfycat", "imgur", "redd.it"]
+    url_type = ["gfycat", "imgur", "redd.it"]
     file_seek = []
 
     output_directory = "./DefaultDirectory/"
@@ -63,7 +63,7 @@ class ScannyMcScanFace:
                 if submission.over_18:
                     continue
                 submission_url = submission.url
-                if any(y in submission_url for y in self.file_type):
+                if any(y in submission_url for y in self.url_type):
                     if "gfycat" in submission_url:
                         if "albums" in submission_url:
                             continue
@@ -90,7 +90,7 @@ class ScannyMcScanFace:
                 if submission.over_18:
                     continue
                 submission_url = submission.url
-                if any(y in submission_url for y in self.file_type):
+                if any(y in submission_url for y in self.url_type):
                     if "gfycat" in submission_url:
                         submission_url = self.gfyFormat(submission_url)
 
