@@ -22,15 +22,15 @@ python ScannyMcScanFace.py subreddit_name "[keyword_1, keyword_2]" "(file_extens
 ## Example Usage:
 ```
 - Full run using keywords, file extensions, and optional parameters.
-1) python ScannyMcScanFace.py all "[ducks, penguins]" "(.png, .jpg, .gif)" -stream
+python ScannyMcScanFace.py all "[ducks, penguins]" "(.png, .jpg, .gif)" -stream
 ```
 ```
 - Simple run using just the subreddit. This will capture all media with the default file extensions (png, jpg, gif).
-2) python ScannyMcScanFace.py all
+python ScannyMcScanFace.py all
 ```
 ```
 - Mixed run using just keywords, and no custom file extensions or parameters.
-3) python ScannyMcScanFace.py all "[ducks, penguins]"
+python ScannyMcScanFace.py all "[ducks, penguins]"
 ```
 > You may choose to not include any keywords, which will capture all media available instead of submissions with keywords.
 > You may choose to not include custom file extensions. This will cause the script to capture media with the default file extensions (png, gif, jpg).
