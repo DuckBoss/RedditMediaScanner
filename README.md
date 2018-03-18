@@ -41,4 +41,4 @@ You can use the template provided in this repository and fill in the required in
 ## All Optional Parameters
 - stream (format: -stream) (enables real time capturing)
 - allow_nsfw (format: -allow_nsfw) (allows nsfw media to be captured)
-- search_limit (format: -any_integer, example: -400) (limits the number of submissions that are scanned)
+- search_limit (format: -integer, example: -400) (limits the number of submissions that are scanned)
