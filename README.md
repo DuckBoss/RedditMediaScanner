@@ -34,6 +34,6 @@ Example Runs:
 You can use the template provided in this repository and fill in the required information as detailed in the usage section of the readme.
 
 ## All Optional Parameters
-- -stream (enables real time capturing)
-- -allow_nsfw (allows nsfw media to be captured)
+- stream (format: -stream) (enables real time capturing)
+- allow_nsfw (format: -allow_nsfw) (allows nsfw media to be captured)
 - search_limit (format: -any_integer) (limits the number of submissions that are scanned)
