@@ -1,7 +1,7 @@
 # ScannyMcScanFace-Python3
 This is a script that accesses a subreddit and downloads images based on keywords from the submission title.
 
-[![GitHub release](https://img.shields.io/badge/Build-1.0-brightgreen.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/releases/latest)
+[![GitHub release](https://img.shields.io/badge/Build-1.1-brightgreen.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/releases/latest)
 [![Packagist](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/blob/master/LICENSE)
 
 
@@ -17,12 +17,18 @@ This is a script that accesses a subreddit and downloads images based on keyword
 ```
 Format:
 python ScannyMcScanFace.py subreddit_name "[keyword_1, keyword_2]" "(file_extension_1, file_extension_2)" -optional_params
+```
 
-Example Runs:
+## Example Usage:
+```
 - Full run using keywords, file extensions, and optional parameters.
 1) python ScannyMcScanFace.py all "[ducks, penguins]" "(.png, .jpg, .gif)" -stream
+```
+```
 - Simple run using just the subreddit. This will capture all media with the default file extensions (png, jpg, gif).
 2) python ScannyMcScanFace.py all
+```
+```
 - Mixed run using just keywords, and no custom file extensions or parameters.
 3) python ScannyMcScanFace.py all "[ducks, penguins]"
 ```
