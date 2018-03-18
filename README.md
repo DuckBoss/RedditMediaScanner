@@ -15,7 +15,6 @@ This is a script that accesses a subreddit and downloads images based on keyword
 2) Keep the praw.ini file in the same directory as the python script.
 3) Run the script with the following format that uses system arguments:
 ```
-Format:
 python ScannyMcScanFace.py subreddit_name "[keyword_1, keyword_2]" "(file_extension_1, file_extension_2)" -optional_params
 ```
 
