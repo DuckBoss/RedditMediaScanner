@@ -6,8 +6,10 @@ This is a script that accesses a subreddit and downloads images based on keyword
 
 
 ## Dependencies
-- praw (can be installed with pip)
-- wget (can be installed with pip)
+These dependencies, if you don't have them, can be installed with pip.
+- praw 
+- wget 
+- urllib
 
 ## Usage
 1) Setup a praw.ini file with your reddit username, password, user_agent, client_id, and client_secret.
