@@ -1,8 +1,8 @@
 # RedditMediaScanner-Python3
-This is a script that accesses a subreddit and downloads images based on keywords from the submission title.
+This is a script that accesses a subreddit and downloads media content based on keywords from the submission title.
 
-[![GitHub release](https://img.shields.io/badge/Build-1.1-brightgreen.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/releases/latest)
-[![Packagist](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/badge/Build-1.2-brightgreen.svg)](https://github.com/DuckBoss/RedditMediaScanner-Python3/releases/latest)
+[![Packagist](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DuckBoss/RedditMediaScanner-Python3/blob/master/LICENSE)
 
 
 ## Dependencies
