@@ -40,3 +40,6 @@ allow_stream -> allow/disallow continuous subreddit scanning for new media (defa
 
 ## praw.ini file
 You can use the template provided in this repository and fill in the required information as detailed in the usage section of the readme.
+
+## Bugs, Issues, or Feature Requests?
+Use the github issue template provided in the repository.
