@@ -1,4 +1,4 @@
-# ScannyMcScanFace-Python3
+# RedditMediaScanner-Python3
 This is a script that accesses a subreddit and downloads images based on keywords from the submission title.
 
 [![GitHub release](https://img.shields.io/badge/Build-1.1-brightgreen.svg)](https://github.com/DuckBoss/ScannyMcScanFace-Python3/releases/latest)
