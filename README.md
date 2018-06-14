@@ -7,40 +7,36 @@ This is a script that accesses a subreddit and downloads images based on keyword
 
 ## Dependencies
 These dependencies, if you don't have them, can be installed with pip.
-- praw 
-- wget 
+- praw
+- wget
 - urllib
+- configparser
 
 ## Usage
 1) Setup a praw.ini file with your reddit username, password, user_agent, client_id, and client_secret.
 > You can register the app with your account for authentication here: https://www.reddit.com/prefs/apps/
 2) Keep the praw.ini file in the same directory as the python script.
-3) Run the script with the following format that uses system arguments:
-```
-python ScannyMcScanFace.py subreddit_name "[keyword_1, keyword_2]" "(file_extension_1, file_extension_2)" -optional_params
-```
+3) Modify the config.ini file with your subreddit, search terms, optional parameters, etc...
+> Refer to the config.ini section of the ReadMe for additional information.
+4) Run the main.py script.
 
 ## Example Usage:
-- Full run using keywords, file extensions, and optional parameters.
 ```
-python ScannyMcScanFace.py all "[ducks, penguins]" "(.png, .jpg, .gif)" -stream
+python main.py
 ```
-- Simple run using just the subreddit. This will capture all media with the default file extensions (png, jpg, gif).
+
+## config.ini file
 ```
-python ScannyMcScanFace.py all
+subreddit_name -> name of the subreddit you wish to scan
+search_terms -> list of keywords seperated by commas
+output_directory -> an output directory address for downloaded media
+file_extensions -> the types of files to download
+url_types -> whitelisted websites/links to download from
+search_limit -> the scan search limit (default=1024)
+allow_nsfw -> allow/disallow scanning of nsfw content (default=False)
+allow_stream -> allow/disallow continuous subreddit scanning for new media (default=False)
 ```
-- Mixed run using just keywords, and no custom file extensions or parameters.
-```
-python ScannyMcScanFace.py all "[ducks, penguins]"
-```
-> You may choose to not include any keywords, which will capture all media available instead of submissions with keywords.
-> You may choose to not include custom file extensions. This will cause the script to capture media with the default file extensions (png, gif, jpg).
-> Optional parameters are not required to run the script. They are used to filter specific submissions.
+> If you mess something up, you can copy/paste the contents of the example_config.ini file into the config.ini file to reset it.
 
 ## praw.ini file
 You can use the template provided in this repository and fill in the required information as detailed in the usage section of the readme.
-
-## All Optional Parameters
-- stream (format: -stream) (enables real time capturing)
-- allow_nsfw (format: -allow_nsfw) (allows nsfw media to be captured)
-- search_limit (format: -integer, example: -400) (limits the number of submissions that are scanned)
