@@ -1,4 +1,4 @@
-# RedditMediaScanner-Python3
+# RedditMediaScanner
 This is a script that accesses a subreddit and downloads media content based on keywords from the submission title.
 
 [![GitHub release](https://img.shields.io/badge/Build-1.2-brightgreen.svg)](https://github.com/DuckBoss/RedditMediaScanner-Python3/releases/latest)
