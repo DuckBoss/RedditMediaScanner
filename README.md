@@ -20,11 +20,6 @@ These dependencies, if you don't have them, can be installed with pip.
 > Refer to the config.ini section of the ReadMe for additional information.
 4) Run the main.py script.
 
-## Example Usage:
-```
-python main.py
-```
-
 ## config.ini file
 ```
 subreddit_name -> name of the subreddit you wish to scan
