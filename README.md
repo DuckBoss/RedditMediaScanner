@@ -9,7 +9,6 @@ This is a script that accesses a subreddit and downloads media content based on 
 These dependencies, if you don't have them, can be installed with pip.
 - praw
 - wget
-- urllib
 - configparser
 
 ## Usage
