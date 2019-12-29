@@ -29,6 +29,7 @@ url_types -> whitelisted websites/links to download from
 search_limit -> the scan search limit (default=1024)
 allow_nsfw -> allow/disallow scanning of nsfw content (default=False)
 allow_stream -> allow/disallow continuous subreddit scanning for new media (default=False)
+split_folders -> split files in subfolders based on extension (default=True)
 ```
 > If you mess something up, you can copy/paste the contents of the example_config.ini file into the config.ini file to reset it.
 
