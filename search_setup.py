@@ -9,6 +9,7 @@ class ConfigReader:
     search_limit = 0
     allow_nsfw = False
     allow_stream = False
+    split_folders = True
 
     def __init__(self):
         print("Config Reader Module Loaded!")
@@ -31,3 +32,4 @@ class ConfigReader:
 
         self.allow_nsfw = cp.getboolean('Optional', 'allow_nsfw')
         self.allow_stream = cp.getboolean('Optional', 'allow_stream')
+        self.split_folders = cp.getboolean('Optional', 'split_folders')
